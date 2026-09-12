@@ -1,0 +1,62 @@
+[
+  {
+    "id": "react-js",
+    "name": "React.js",
+    "category": "Frontend",
+    "description": "A popular JavaScript library for building component-based user interfaces with efficiency.",
+    "difficulty": "Intermediate",
+    "rating": 4.9,
+    "badge": "Popular",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+  },
+  {
+    "id": "node-js",
+    "name": "Node.js",
+    "category": "Backend",
+    "description": "JavaScript runtime built on Chrome's V8 engine for building fast, scalable network applications.",
+    "difficulty": "Intermediate",
+    "rating": 4.8,
+    "badge": "Essential",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+  },
+  {
+    "id": "tailwind-css",
+    "name": "Tailwind CSS",
+    "category": "Styling",
+    "description": "A utility-first CSS framework for rapidly building custom user interfaces directly in markup.",
+    "difficulty": "Beginner",
+    "rating": 4.9,
+    "badge": "Trending",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+  },
+  {
+    "id": "mongodb",
+    "name": "MongoDB",
+    "category": "Database",
+    "description": "A NoSQL document database designed for modern app development and flexible cloud scaling.",
+    "difficulty": "Intermediate",
+    "rating": 4.6,
+    "badge": "Popular",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+  },
+  {
+    "id": "typescript",
+    "name": "TypeScript",
+    "category": "Language",
+    "description": "Strongly typed programming language that builds on JavaScript, giving you better tooling at scale.",
+    "difficulty": "Advanced",
+    "rating": 4.9,
+    "badge": "Must Learn",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+  },
+  {
+    "id": "express-js",
+    "name": "Express.js",
+    "category": "Backend",
+    "description": "Fast, unopinionated, minimalist web framework for Node.js to structure web APIs.",
+    "difficulty": "Beginner",
+    "rating": 4.7,
+    "badge": "Standard",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+  }
+]
