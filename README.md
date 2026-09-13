@@ -35,9 +35,12 @@ Conditional rendering means rendering different UI elements based on specific co
     {/* Map through saved stack items */}
   </div>
 )}
-```
 
-### 7. **How do you pass data from a parent component to a child component, and how does a child send something back to the parent?**
-- **Parent to Child:** The parent component passes data down to the child component as custom attributes called props (e.g., `<Card tech="{item}"/>`).
-- **Child to Parent:** The parent passes a callback function down as a prop to the child. When an action occurs in the child (such as a button click), the child invokes that function and passes data back up to the parent as arguments.
-)}
+
+## 7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
+Parent to Child: The parent component passes data down to the child component as custom attributes called props (e.g., <Card tech={item} />).
+
+Child to Parent: The parent passes a callback function down as a prop to the child. When an action occurs in the child (such as a button click), the child invokes that function and passes data back up to the parent as arguments.
+
+Live Demo
+Netlify Deployment: https://sweet-hamster-7c9b59.netlify.app/
