@@ -1,3 +1,29 @@
+#  Dev Stack
+
+> Dev Stack is an interactive web application designed to help developers explore, filter, and curate their personalized technology stacks efficiently.
+
+
+##  Technologies Used
+
+- **Frontend:** React, Tailwind CSS
+- **Build Tool:** Vite
+- **UI Components & Alerts:** React-Toastify, Lucide Icons
+- **Deployment:** Netlify
+
+
+##  Key Features
+
+- **Interactive Stack Builder:** Search and select technologies dynamically to build your custom developer stack.
+- **Real-time Visual Feedback:** Instant UI responses and toast notifications when items are added or removed.
+- **Responsive Gradient UI:** Clean, modern interface designed with a centralized theme that scales across all screen sizes.
+
+
+##  Live Demo
+
+- **Netlify Deployment:** [https://sweet-hamster-7c9b59.netlify.app/](https://sweet-hamster-7c9b59.netlify.app/)
+
+
+
 ## React Questions & Answers
 
 ### 1. What is JSX, and why is it used in React?
@@ -35,12 +61,8 @@ Conditional rendering means rendering different UI elements based on specific co
     {/* Map through saved stack items */}
   </div>
 )}
+```
 
-
-## 7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
-Parent to Child: The parent component passes data down to the child component as custom attributes called props (e.g., <Card tech={item} />).
-
-Child to Parent: The parent passes a callback function down as a prop to the child. When an action occurs in the child (such as a button click), the child invokes that function and passes data back up to the parent as arguments.
-
-Live Demo
-Netlify Deployment: https://sweet-hamster-7c9b59.netlify.app/
+### 7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
+- **Parent to Child:** The parent component passes data down to the child component as custom attributes called props (e.g., `<Card tech="{item}"/>`).
+- **Child to Parent:** The parent passes a callback function down as a prop to the child. When an action occurs in the child (such as a button click), the child invokes that function and passes data back up to the parent as arguments.
