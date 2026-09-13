@@ -151,52 +151,71 @@ export default function App() {
           
           {/* Technologies Grid */}
           <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {techs.map((tech) => (
-              <div
-                key={tech.id}
-                className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm hover:shadow-2xl hover:border-pink-200 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden"
-              >
-                <div>
-                  {/* Card Header & Theme Color Badge */}
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="p-2.5 bg-slate-50 rounded-xl group-hover:bg-pink-50/50 transition-colors">
-                      <img src={tech.icon} alt={tech.name} className="w-8 h-8 object-contain group-hover:scale-110 transition-transform duration-300" />
+            {techs.map((tech) => {
+              const isAdded = savedTechs.some((item) => item.id === tech.id);
+
+              return (
+                <div
+                  key={tech.id}
+                  className={`bg-white border rounded-2xl p-6 shadow-sm transition-all duration-300 flex flex-col justify-between group relative overflow-hidden ${
+                    isAdded 
+                      ? 'border-pink-200 bg-pink-50/10' 
+                      : 'border-slate-100 hover:shadow-2xl hover:border-pink-200 hover:-translate-y-2'
+                  }`}
+                >
+                  <div>
+                    {/* Card Header & Theme Color Badge */}
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="p-2.5 bg-slate-50 rounded-xl group-hover:bg-pink-50/50 transition-colors">
+                        <img src={tech.icon} alt={tech.name} className="w-8 h-8 object-contain group-hover:scale-110 transition-transform duration-300" />
+                      </div>
+                      
+                      {/* Dynamic Theme Badge */}
+                      <span className={`text-[11px] font-semibold px-3 py-1 rounded-full border ${tech.badgeClass || 'bg-slate-100 text-slate-600 border-slate-200'}`}>
+                        {tech.badge}
+                      </span>
                     </div>
-                    
-                    {/* Dynamic Theme Badge */}
-                    <span className={`text-[11px] font-semibold px-3 py-1 rounded-full border ${tech.badgeClass || 'bg-slate-100 text-slate-600 border-slate-200'}`}>
-                      {tech.badge}
-                    </span>
+
+                    {/* Title & Description */}
+                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-pink-600 transition-colors">
+                      {tech.name}
+                    </h3>
+                    <p className="text-slate-500 text-xs leading-relaxed mb-6 line-clamp-3">
+                      {tech.description}
+                    </p>
                   </div>
 
-                  {/* Title & Description */}
-                  <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-pink-600 transition-colors">
-                    {tech.name}
-                  </h3>
-                  <p className="text-slate-500 text-xs leading-relaxed mb-6 line-clamp-3">
-                    {tech.description}
-                  </p>
-                </div>
-
-                {/* Footer Info & Action */}
-                <div>
-                  <div className="flex items-center justify-between text-[11px] text-slate-400 font-medium mb-4 pt-3 border-t border-slate-50">
-                    <div className="flex items-center space-x-2">
-                      <span className="bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md border border-slate-200 font-semibold">{tech.category}</span>
-                      <span>{tech.experience}</span>
+                  {/* Footer Info & Action */}
+                  <div>
+                    <div className="flex items-center justify-between text-[11px] text-slate-400 font-medium mb-4 pt-3 border-t border-slate-50">
+                      <div className="flex items-center space-x-2">
+                        <span className="bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md border border-slate-200 font-semibold">{tech.category}</span>
+                        <span>{tech.experience}</span>
+                      </div>
+                      <span className="text-amber-500 font-bold bg-amber-50 px-2 py-0.5 rounded-md border border-amber-100">★ {tech.rating}</span>
                     </div>
-                    <span className="text-amber-500 font-bold bg-amber-50 px-2 py-0.5 rounded-md border border-amber-100">★ {tech.rating}</span>
-                  </div>
 
-                  <button
-                    onClick={() => handleAddStack(tech)}
-                    className="w-full py-2.5 bg-slate-900 hover:bg-gradient-to-r hover:from-pink-500 hover:to-purple-600 text-white text-xs font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-pink-500/25 active:scale-[0.98]"
-                  >
-                    Add to Stack
-                  </button>
+                    {/* Dynamic Action Button */}
+                    {isAdded ? (
+                      <button
+                        onClick={() => handleRemoveSingle(tech.id)}
+                        className="w-full py-2.5 bg-pink-50 text-pink-600 border border-pink-100 text-xs font-bold rounded-xl transition-all duration-300 flex items-center justify-center space-x-1"
+                      >
+                        <span>✓</span>
+                        <span>Added to Stack</span>
+                      </button>
+                    ) : (
+                      <button
+                        onClick={() => handleAddStack(tech)}
+                        className="w-full py-2.5 bg-slate-900 hover:bg-gradient-to-r hover:from-pink-500 hover:to-purple-600 text-white text-xs font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-pink-500/25 active:scale-[0.98]"
+                      >
+                        Add to Stack
+                      </button>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Sidebar - Your Stack */}
