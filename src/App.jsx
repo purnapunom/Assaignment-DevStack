@@ -164,14 +164,14 @@ export default function App() {
                   }`}
                 >
                   <div>
-                    {/* Card Header & Theme Color Badge */}
+                    {/* Card Header & Dynamic Colored Badge */}
                     <div className="flex items-center justify-between mb-4">
                       <div className="p-2.5 bg-slate-50 rounded-xl group-hover:bg-pink-50/50 transition-colors">
                         <img src={tech.icon} alt={tech.name} className="w-8 h-8 object-contain group-hover:scale-110 transition-transform duration-300" />
                       </div>
                       
-                      {/* Dynamic Theme Badge */}
-                      <span className={`text-[11px] font-semibold px-3 py-1 rounded-full border ${tech.badgeClass || 'bg-slate-100 text-slate-600 border-slate-200'}`}>
+                      {/* Dynamic Color Badge */}
+                      <span className={`text-[11px] font-semibold px-3 py-1 rounded-full border ${tech.badgeColor || 'bg-slate-100 text-slate-600 border-slate-200'}`}>
                         {tech.badge}
                       </span>
                     </div>
@@ -199,7 +199,7 @@ export default function App() {
                     {isAdded ? (
                       <button
                         onClick={() => handleRemoveSingle(tech.id)}
-                        className="w-full py-2.5 bg-pink-50 text-pink-600 border border-pink-100 text-xs font-bold rounded-xl transition-all duration-300 flex items-center justify-center space-x-1"
+                        className="w-full py-2.5 bg-pink-50 text-pink-600 border border-pink-100 text-xs font-bold rounded-xl transition-all duration-300 flex items-center justify-center space-x-1 hover:bg-pink-100"
                       >
                         <span>✓</span>
                         <span>Added to Stack</span>
