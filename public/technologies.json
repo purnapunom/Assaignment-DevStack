@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "name": "React",
+    "description": "A declarative, component-based JavaScript library for building modern user interfaces.",
+    "category": "Frontend",
+    "badge": "Popular",
+    "badgeColor": "text-pink-500 bg-pink-50 border-pink-100",
+    "experience": "Beginner-Friendly",
+    "rating": 4.9,
+    "icon": "./picture/React.png"
+  },
+  {
+    "id": 2,
+    "name": "Vue.js",
+    "description": "An approachable, performant, and versatile framework for building web user interfaces.",
+    "category": "Frontend",
+    "badge": "Versatile",
+    "badgeColor": "text-emerald-500 bg-emerald-50 border-emerald-100",
+    "experience": "Beginner-Friendly",
+    "rating": 4.8,
+    "icon": "./picture/Vue.js.png"
+  },
+  {
+    "id": 3,
+    "name": "Svelte",
+    "description": "Cybernetically enhanced web apps with compile-time reactivity and zero virtual DOM overhead.",
+    "category": "Frontend",
+    "badge": "Fast",
+    "badgeColor": "text-orange-500 bg-orange-50 border-orange-100",
+    "experience": "Intermediate",
+    "rating": 4.8,
+    "icon": "./picture/Svelte.png"
+  },
+  {
+    "id": 4,
+    "name": "Next.js",
+    "description": "The React framework for full-stack web applications with hybrid static & server rendering.",
+    "category": "Frontend",
+    "badge": "Fullstack",
+    "badgeColor": "text-purple-500 bg-purple-50 border-purple-100",
+    "experience": "Intermediate",
+    "rating": 4.9,
+    "icon": "./picture/Next.js.png"
+  },
+  {
+    "id": 5,
+    "name": "Node.js",
+    "description": "An asynchronous event-driven JavaScript runtime built on Chrome's V8 engine.",
+    "category": "Backend",
+    "badge": "Standard",
+    "badgeColor": "text-green-500 bg-green-50 border-green-100",
+    "experience": "Intermediate",
+    "rating": 4.8,
+    "icon": "./picture/Node.js.png"
+  },
+  {
+    "id": 6,
+    "name": "Express.js",
+    "description": "Fast, unopinionated, minimalist web framework for Node.js backends and REST APIs.",
+    "category": "Backend",
+    "badge": "Minimal",
+    "badgeColor": "text-sky-500 bg-sky-50 border-sky-100",
+    "experience": "Beginner-Friendly",
+    "rating": 4.7,
+    "icon": "./picture/Express.js.png"
+  },
+  {
+    "id": 7,
+    "name": "Django",
+    "description": "A high-level Python web framework that encourages rapid development and clean design.",
+    "category": "Backend",
+    "badge": "Batteries-Included",
+    "badgeColor": "text-rose-500 bg-rose-50 border-rose-100",
+    "experience": "Intermediate",
+    "rating": 4.7,
+    "icon": "./picture/Django.png"
+  },
+  {
+    "id": 8,
+    "name": "Spring Boot",
+    "description": "Open-source Java framework used to build enterprise-grade microservices and robust backends.",
+    "category": "Backend",
+    "badge": "Enterprise",
+    "badgeColor": "text-teal-500 bg-teal-50 border-teal-100",
+    "experience": "Advanced",
+    "rating": 4.6,
+    "icon": "./picture/SpringBoot.png"
+  },
+  {
+    "id": 9,
+    "name": "PostgreSQL",
+    "description": "A powerful, open-source object-relational database system with proven reliability.",
+    "category": "Database",
+    "badge": "Top SQL",
+    "badgeColor": "text-indigo-500 bg-indigo-50 border-indigo-100",
+    "experience": "Intermediate",
+    "rating": 4.9,
+    "icon": "./picture/PostgreSQL.png"
+  }
+]
