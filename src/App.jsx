@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-// Image imports
-import logoImg from './picture/logo-text.png';
-import bannerImg from './picture/banner-stack.png';
+// Image imports matching the folder structure
+import logoImg from '../picture/logo-text.png';
+import bannerImg from '../picture/banner-stack.png';
 
 export default function App() {
   const [techs, setTechs] = useState([]);
