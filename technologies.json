@@ -8,7 +8,7 @@
     "badgeColor": "text-pink-500 bg-pink-50 border-pink-100",
     "experience": "Beginner-Friendly",
     "rating": 4.9,
-    "icon": "src\picture\React.png"
+    "icon": "./picture/React.png"
   },
   {
     "id": 2,
@@ -19,7 +19,7 @@
     "badgeColor": "text-emerald-500 bg-emerald-50 border-emerald-100",
     "experience": "Beginner-Friendly",
     "rating": 4.8,
-    "icon": "src\picture\Vue.js.png"
+    "icon": "./picture/Vue.js.png"
   },
   {
     "id": 3,
@@ -30,7 +30,7 @@
     "badgeColor": "text-orange-500 bg-orange-50 border-orange-100",
     "experience": "Intermediate",
     "rating": 4.8,
-    "icon": "src\picture\Svelte.png"
+    "icon": "./picture/Svelte.png"
   },
   {
     "id": 4,
@@ -41,7 +41,7 @@
     "badgeColor": "text-purple-500 bg-purple-50 border-purple-100",
     "experience": "Intermediate",
     "rating": 4.9,
-    "icon": "src\picture\Node.js.png"
+    "icon": "./picture/Next.js.png"
   },
   {
     "id": 5,
@@ -52,7 +52,7 @@
     "badgeColor": "text-green-500 bg-green-50 border-green-100",
     "experience": "Intermediate",
     "rating": 4.8,
-    "icon": "src\picture\Node.js.png"
+    "icon": "./picture/Node.js.png"
   },
   {
     "id": 6,
@@ -63,7 +63,7 @@
     "badgeColor": "text-sky-500 bg-sky-50 border-sky-100",
     "experience": "Beginner-Friendly",
     "rating": 4.7,
-    "icon": "src\picture\Express.png"
+    "icon": "./picture/Express.js.png"
   },
   {
     "id": 7,
@@ -74,7 +74,7 @@
     "badgeColor": "text-rose-500 bg-rose-50 border-rose-100",
     "experience": "Intermediate",
     "rating": 4.7,
-    "icon": "src\picture\Django.png"
+    "icon": "./picture/Django.png"
   },
   {
     "id": 8,
@@ -85,7 +85,7 @@
     "badgeColor": "text-teal-500 bg-teal-50 border-teal-100",
     "experience": "Advanced",
     "rating": 4.6,
-    "icon": "src\picture\Spring.png"
+    "icon": "./picture/SpringBoot.png"
   },
   {
     "id": 9,
@@ -96,50 +96,6 @@
     "badgeColor": "text-indigo-500 bg-indigo-50 border-indigo-100",
     "experience": "Intermediate",
     "rating": 4.9,
-    "icon": "src\picture\PostgresSQL.png"
-  },
-  {
-    "id": 10,
-    "name": "Tailwind CSS",
-    "description": "A utility-first CSS framework packed with classes that can be composed to build any design.",
-    "category": "Frontend",
-    "badge": "Styling",
-    "badgeColor": "text-cyan-500 bg-cyan-50 border-cyan-100",
-    "experience": "Beginner-Friendly",
-    "rating": 4.9,
-    "icon": "src\picture\Tailwind CSS.png"
-  },
-  {
-    "id": 11,
-    "name": "TypeScript",
-    "description": "Strongly typed programming language that builds on JavaScript, giving you better tooling.",
-    "category": "Language",
-    "badge": "Typed",
-    "badgeColor": "text-blue-500 bg-blue-50 border-blue-100",
-    "experience": "Intermediate",
-    "rating": 4.9,
-    "icon": "src\picture\TypeScript.png"
-  },
-  {
-    "id": 12,
-    "name": "Docker",
-    "description": "Set of platform as a service products that use OS-level virtualization to deliver software in packages.",
-    "category": "DevOps",
-    "badge": "Containers",
-    "badgeColor": "text-sky-600 bg-sky-50 border-sky-100",
-    "experience": "Intermediate",
-    "rating": 4.8,
-    "icon": "src\picture\Docker.png"
-  },
-  {
-    "id": 13,
-    "name": "Redis",
-    "description": "In-memory data structure store used as a distributed, in-memory key–value database, cache, and message broker.",
-    "category": "Database",
-    "badge": "In-Memory",
-    "badgeColor": "text-red-500 bg-red-50 border-red-100",
-    "experience": "Intermediate",
-    "rating": 4.8,
-    "icon": "src\picture\Redis.png"
+    "icon": "./picture/PostgreSQL.png"
   }
 ]

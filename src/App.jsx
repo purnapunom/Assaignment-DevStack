@@ -2,9 +2,36 @@ import React, { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-// Public folder asset paths
-const logoImg = "/picture/logo-text.png";
-const bannerImg = "/picture/banner-stack.png";
+// src/picture/ ফোল্ডারের সব ইমেজ লোড করা
+const images = import.meta.glob('./picture/*.{png,jpg,jpeg,svg,webp}', { eager: true });
+
+// ছবির সঠিক পাথ খুঁজে বের করার ফাংশন
+const getImageUrl = (path) => {
+  if (!path) return '';
+  const filename = path.split(/[/\\]/).pop();
+  const key = `./picture/${filename}`;
+  return images[key] ? images[key].default : path;
+};
+
+// ব্যাজের (Badge) লেখা অনুযায়ী আলাদা আলাদা কালার দেওয়ার ফাংশন
+const getBadgeStyle = (badge) => {
+  switch (badge) {
+    case 'Popular':
+      return 'bg-pink-100 text-pink-600 border-pink-200';
+    case 'Versatile':
+      return 'bg-purple-100 text-purple-600 border-purple-200';
+    case 'Fast':
+      return 'bg-emerald-100 text-emerald-600 border-emerald-200';
+    case 'Fullstack':
+      return 'bg-blue-100 text-blue-600 border-blue-200';
+    case 'Standard':
+      return 'bg-amber-100 text-amber-600 border-amber-200';
+    case 'Minimal':
+      return 'bg-indigo-100 text-indigo-600 border-indigo-200';
+    default:
+      return 'bg-slate-100 text-slate-600 border-slate-200';
+  }
+};
 
 export default function App() {
   const [techs, setTechs] = useState([]);
@@ -40,11 +67,36 @@ export default function App() {
     <div className="min-h-screen bg-white text-slate-800 font-sans flex flex-col justify-between selection:bg-pink-100 selection:text-pink-600">
       <ToastContainer position="top-right" autoClose={2000} />
 
-      {/* Header / Navbar */}
+      {/* Header / Navbar (সমস্যা ৩ সমাধান) */}
       <header className="border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-12 h-20 flex items-center justify-between">
           
-          {/* Mobile Hamburger Menu Icon */}
+          {/* Logo (সমস্যা ১ সমাধান) */}
+          <div className="flex items-center">
+            <img 
+              src={getImageUrl("logo-text.png")} 
+              alt="DevStack Logo" 
+              className="h-7 sm:h-8 object-contain cursor-pointer hover:opacity-90 transition-opacity"
+            />
+          </div>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-8 text-sm font-medium">
+            <a href="#" className="text-pink-500 font-semibold border-b-2 border-pink-500 pb-1">Home</a>
+            <a href="#" className="text-slate-500 hover:text-slate-900 transition-colors">Technologies</a>
+            <a href="#" className="text-slate-500 hover:text-slate-900 transition-colors">Projects</a>
+            <a href="#" className="text-slate-500 hover:text-slate-900 transition-colors">About</a>
+            <a href="#" className="text-slate-500 hover:text-slate-900 transition-colors">Contact</a>
+          </nav>
+
+          <div className="hidden md:flex items-center space-x-3 sm:space-x-6 text-xs sm:text-sm font-medium">
+            <a href="#" className="text-slate-600 hover:text-slate-900 transition-colors">Sign In</a>
+            <button className="px-4 py-2 sm:px-6 sm:py-2.5 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold rounded-full shadow-md shadow-pink-500/20 hover:shadow-lg hover:shadow-pink-500/30 transition-all active:scale-95">
+              Sign Up
+            </button>
+          </div>
+
+          {/* Mobile Hamburger Button */}
           <button 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden p-2 text-slate-600 hover:text-slate-900 focus:outline-none"
@@ -59,34 +111,6 @@ export default function App() {
             </svg>
           </button>
 
-          {/* Logo */}
-          <div className="flex items-center">
-            <img 
-              src={logoImg} 
-              alt="DevStack Logo" 
-              className="h-7 sm:h-8 object-contain cursor-pointer hover:opacity-90 transition-opacity"
-            />
-          </div>
-
-          {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center space-x-8 text-sm font-medium">
-            <a href="#" className="text-pink-500 font-semibold border-b-2 border-pink-500 pb-1">Home</a>
-            <a href="#" className="text-slate-500 hover:text-slate-900 transition-colors">Technologies</a>
-            <a href="#" className="text-slate-500 hover:text-slate-900 transition-colors">Projects</a>
-            <a href="#" className="text-slate-500 hover:text-slate-900 transition-colors">About</a>
-            <a href="#" className="text-slate-500 hover:text-slate-900 transition-colors">Contact</a>
-          </nav>
-
-          {/* Action Buttons */}
-          <div className="flex items-center space-x-3 sm:space-x-6 text-xs sm:text-sm font-medium">
-            <a href="#" className="text-slate-600 hover:text-slate-900 transition-colors">
-              Sign In
-            </a>
-            <button className="px-4 py-2 sm:px-6 sm:py-2.5 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold rounded-full shadow-md shadow-pink-500/20 hover:shadow-lg hover:shadow-pink-500/30 transition-all active:scale-95">
-              Sign Up
-            </button>
-          </div>
-
         </div>
 
         {/* Mobile Dropdown Menu */}
@@ -97,6 +121,11 @@ export default function App() {
             <a href="#" className="text-slate-600 hover:text-slate-900">Projects</a>
             <a href="#" className="text-slate-600 hover:text-slate-900">About</a>
             <a href="#" className="text-slate-600 hover:text-slate-900">Contact</a>
+            <hr className="my-2 border-slate-100" />
+            <a href="#" className="text-slate-600 hover:text-slate-900">Sign In</a>
+            <button className="w-full py-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-full shadow-md">
+              Sign Up
+            </button>
           </div>
         )}
       </header>
@@ -126,10 +155,9 @@ export default function App() {
             </div>
           </div>
 
-          {/* 3D Banner Image */}
           <div className="w-full md:w-[450px] flex justify-center">
             <img 
-              src={bannerImg} 
+              src={getImageUrl("banner-stack.png")} 
               alt="Development Stack Illustration" 
               className="w-full max-w-xs sm:max-w-md object-contain filter drop-shadow-2xl hover:scale-105 transition-transform duration-500 ease-out"
             />
@@ -146,10 +174,9 @@ export default function App() {
           </p>
         </div>
 
-        {/* Cards Grid + Right Sidebar */}
+        {/* Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
           
-          {/* Technologies Grid */}
           <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {techs.map((tech) => {
               const isAdded = savedTechs.some((item) => item.id === tech.id);
@@ -164,19 +191,22 @@ export default function App() {
                   }`}
                 >
                   <div>
-                    {/* Card Header & Dynamic Colored Badge */}
                     <div className="flex items-center justify-between mb-4">
-                      <div className="p-2.5 bg-slate-50 rounded-xl group-hover:bg-pink-50/50 transition-colors">
-                        <img src={tech.icon} alt={tech.name} className="w-8 h-8 object-contain group-hover:scale-110 transition-transform duration-300" />
+                      {/* Card Icon (সমস্যা ১ সমাধান) */}
+                      <div className="p-2.5 bg-slate-50 rounded-xl group-hover:bg-pink-50/50 transition-colors flex items-center justify-center w-12 h-12">
+                        <img 
+                          src={getImageUrl(tech.icon)} 
+                          alt={tech.name} 
+                          className="w-8 h-8 object-contain group-hover:scale-110 transition-transform duration-300" 
+                        />
                       </div>
                       
-                      {/* Dynamic Color Badge */}
-                      <span className={`text-[11px] font-semibold px-3 py-1 rounded-full border ${tech.badgeColor || 'bg-slate-100 text-slate-600 border-slate-200'}`}>
+                      {/* Dynamic Colored Badge (সমস্যা ২ সমাধান) */}
+                      <span className={`text-[11px] font-semibold px-3 py-1 rounded-full border ${getBadgeStyle(tech.badge)}`}>
                         {tech.badge}
                       </span>
                     </div>
 
-                    {/* Title & Description */}
                     <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-pink-600 transition-colors">
                       {tech.name}
                     </h3>
@@ -185,7 +215,6 @@ export default function App() {
                     </p>
                   </div>
 
-                  {/* Footer Info & Action */}
                   <div>
                     <div className="flex items-center justify-between text-[11px] text-slate-400 font-medium mb-4 pt-3 border-t border-slate-50">
                       <div className="flex items-center space-x-2">
@@ -195,7 +224,6 @@ export default function App() {
                       <span className="text-amber-500 font-bold bg-amber-50 px-2 py-0.5 rounded-md border border-amber-100">★ {tech.rating}</span>
                     </div>
 
-                    {/* Dynamic Action Button */}
                     {isAdded ? (
                       <button
                         onClick={() => handleRemoveSingle(tech.id)}
@@ -218,7 +246,7 @@ export default function App() {
             })}
           </div>
 
-          {/* Sidebar - Your Stack */}
+          {/* Sidebar */}
           <div className="lg:col-span-1 bg-white border border-slate-100 rounded-2xl p-5 shadow-sm sticky top-28">
             <div className="flex items-center justify-between mb-1">
               <h3 className="text-base font-bold text-slate-900">Your Stack</h3>
@@ -238,7 +266,11 @@ export default function App() {
                     className="flex items-center justify-between p-3 bg-slate-50/80 hover:bg-slate-100/80 rounded-xl border border-slate-100 transition-all group"
                   >
                     <div className="flex items-center space-x-3">
-                      <img src={item.icon} alt={item.name} className="w-6 h-6 object-contain" />
+                      <img 
+                        src={getImageUrl(item.icon)} 
+                        alt={item.name} 
+                        className="w-6 h-6 object-contain" 
+                      />
                       <div>
                         <h4 className="text-xs font-bold text-slate-800 group-hover:text-pink-600 transition-colors">{item.name}</h4>
                         <p className="text-[10px] text-slate-400">{item.category}</p>
@@ -268,62 +300,19 @@ export default function App() {
         </div>
       </div>
 
-      {/* Multi-Column Footer */}
+      {/* Footer */}
       <footer className="border-t border-slate-100 bg-white mt-20 pt-12 sm:pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-6 sm:px-12">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
-            
-            {/* Brand Logo & Info */}
             <div className="col-span-2">
               <img 
-                src={logoImg} 
+                src={getImageUrl("logo-text.png")} 
                 alt="DevStack Logo" 
                 className="h-7 object-contain mb-4" 
               />
               <p className="text-xs text-slate-400 max-w-xs mb-6 leading-relaxed">
                 Curated tools, technologies, and resources for developers building modern software.
               </p>
-              <div className="flex space-x-4 text-xs font-medium text-slate-400">
-                <a href="#" className="hover:text-pink-500 transition-colors">GitHub</a>
-                <a href="#" className="hover:text-pink-500 transition-colors">Twitter</a>
-                <a href="#" className="hover:text-pink-500 transition-colors">LinkedIn</a>
-              </div>
-            </div>
-
-            {/* Links Columns */}
-            <div>
-              <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-4">Product</h4>
-              <ul className="space-y-2.5 text-xs text-slate-400">
-                <li><a href="#" className="hover:text-slate-900 transition-colors">Home</a></li>
-                <li><a href="#" className="hover:text-slate-900 transition-colors">Technologies</a></li>
-                <li><a href="#" className="hover:text-slate-900 transition-colors">Projects</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-4">Company</h4>
-              <ul className="space-y-2.5 text-xs text-slate-400">
-                <li><a href="#" className="hover:text-slate-900 transition-colors">About</a></li>
-                <li><a href="#" className="hover:text-slate-900 transition-colors">Contact</a></li>
-                <li><a href="#" className="hover:text-slate-900 transition-colors">Careers</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-4">Legal</h4>
-              <ul className="space-y-2.5 text-xs text-slate-400">
-                <li><a href="#" className="hover:text-slate-900 transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-slate-900 transition-colors">Terms of Service</a></li>
-              </ul>
-            </div>
-
-          </div>
-
-          <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-center text-[11px] text-slate-400">
-            <p>© 2026 DevStack. All rights reserved.</p>
-            <div className="flex space-x-6 mt-3 sm:mt-0">
-              <a href="#" className="hover:text-slate-600 transition-colors">Privacy</a>
-              <a href="#" className="hover:text-slate-600 transition-colors">Terms</a>
             </div>
           </div>
         </div>
