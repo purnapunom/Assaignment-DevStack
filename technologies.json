@@ -8,7 +8,7 @@
     "badgeColor": "text-pink-500 bg-pink-50 border-pink-100",
     "experience": "Beginner-Friendly",
     "rating": 4.9,
-    "icon": "/picture/React.png"
+    "icon": "src\picture\React.png"
   },
   {
     "id": 2,
@@ -19,7 +19,7 @@
     "badgeColor": "text-emerald-500 bg-emerald-50 border-emerald-100",
     "experience": "Beginner-Friendly",
     "rating": 4.8,
-    "icon": "/picture/Vue.js.png"
+    "icon": "src\picture\Vue.js.png"
   },
   {
     "id": 3,
@@ -30,7 +30,7 @@
     "badgeColor": "text-orange-500 bg-orange-50 border-orange-100",
     "experience": "Intermediate",
     "rating": 4.8,
-    "icon": "/picture/Svelte.png"
+    "icon": "src\picture\Svelte.png"
   },
   {
     "id": 4,
@@ -41,7 +41,7 @@
     "badgeColor": "text-purple-500 bg-purple-50 border-purple-100",
     "experience": "Intermediate",
     "rating": 4.9,
-    "icon": "/picture/Next.js.png"
+    "icon": "src\picture\Node.js.png"
   },
   {
     "id": 5,
@@ -52,7 +52,7 @@
     "badgeColor": "text-green-500 bg-green-50 border-green-100",
     "experience": "Intermediate",
     "rating": 4.8,
-    "icon": "/picture/Node.js.png"
+    "icon": "src\picture\Node.js.png"
   },
   {
     "id": 6,
@@ -63,7 +63,7 @@
     "badgeColor": "text-sky-500 bg-sky-50 border-sky-100",
     "experience": "Beginner-Friendly",
     "rating": 4.7,
-    "icon": "/picture/Express.png"
+    "icon": "src\picture\Express.png"
   },
   {
     "id": 7,
@@ -74,7 +74,7 @@
     "badgeColor": "text-rose-500 bg-rose-50 border-rose-100",
     "experience": "Intermediate",
     "rating": 4.7,
-    "icon": "/picture/Django.png"
+    "icon": "src\picture\Django.png"
   },
   {
     "id": 8,
@@ -85,7 +85,7 @@
     "badgeColor": "text-teal-500 bg-teal-50 border-teal-100",
     "experience": "Advanced",
     "rating": 4.6,
-    "icon": "/picture/Spring.png"
+    "icon": "src\picture\Spring.png"
   },
   {
     "id": 9,
@@ -96,7 +96,7 @@
     "badgeColor": "text-indigo-500 bg-indigo-50 border-indigo-100",
     "experience": "Intermediate",
     "rating": 4.9,
-    "icon": "/picture/PostgresSQL.png"
+    "icon": "src\picture\PostgresSQL.png"
   },
   {
     "id": 10,
@@ -107,7 +107,7 @@
     "badgeColor": "text-cyan-500 bg-cyan-50 border-cyan-100",
     "experience": "Beginner-Friendly",
     "rating": 4.9,
-    "icon": "/picture/Tailwind CSS.png"
+    "icon": "src\picture\Tailwind CSS.png"
   },
   {
     "id": 11,
@@ -118,7 +118,7 @@
     "badgeColor": "text-blue-500 bg-blue-50 border-blue-100",
     "experience": "Intermediate",
     "rating": 4.9,
-    "icon": "/picture/TypeScript.png"
+    "icon": "src\picture\TypeScript.png"
   },
   {
     "id": 12,
@@ -129,7 +129,7 @@
     "badgeColor": "text-sky-600 bg-sky-50 border-sky-100",
     "experience": "Intermediate",
     "rating": 4.8,
-    "icon": "/picture/Docker.png"
+    "icon": "src\picture\Docker.png"
   },
   {
     "id": 13,
@@ -140,6 +140,6 @@
     "badgeColor": "text-red-500 bg-red-50 border-red-100",
     "experience": "Intermediate",
     "rating": 4.8,
-    "icon": "/picture/Redis.png"
+    "icon": "src\picture\Redis.png"
   }
 ]
